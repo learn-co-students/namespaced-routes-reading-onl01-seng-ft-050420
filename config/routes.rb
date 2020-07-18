@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get '/admin/stats', to: 'stats#index'
 
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
   root 'posts#index'
 end
